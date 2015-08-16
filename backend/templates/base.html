@@ -1,71 +1,71 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>{% block title %}Title Base{% endblock %}</title>
-        <meta name="description" content="">
-        
-        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-        <link href="{% static 'css/bootstrap-theme.min.css' %}" rel="stylesheet">
-        <link href="{% static 'css/base.css' %}" rel="stylesheet">
-    </head>
-    
-    <body>
-        
-        <div class="container">
 
-      <!-- The justified navigation menu is meant for single line per list item.
-           Multiple lines will require custom code not provided by Bootstrap. -->
-      <div style="height:80px;">
-            
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}Title Base{% endblock %}</title>
+    <meta name="description" content="">
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap-theme.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+    <div style="background-color:#333;" class="header">
+    <!-- The justified navigation menu is meant for single line per list item.
+         Multiple lines will require custom code not provided by Bootstrap. -->
+    <div style="height:80px;">
+
         <div style="width:100px; float:left; ">
             <h3 class="text-muted">TuCupon.com</h3>
         </div>
         <div style="width:100px; float:right;">
             right menu
         </div>
-       </div> 
-            <div  class="masthead">
-        
-           
+    </div>
+    <div  class="masthead">
+
+
         <nav>
-          <ul class="nav nav-justified">
-            <li class="active"><a href="#">Cupones</a></li>
-            <li><a href="#">Compañías</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
+            <ul class="nav nav-justified">
+                <li class="active"><a href="#">Cupones</a></li>
+                <li><a href="#">Compañías</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </nav>
-           
-      </div>
 
-      
-            
-        {% block page_body %}
-        base
-        {% endblock %}    
-            
-            
+    </div>
+        </div>
 
-      <!-- Site footer -->
-      <footer class="footer">
+    <div style="padding:30px;">
+    {% block page_body %}
+    base
+    {% endblock %}
+
+    </div>
+
+    <!-- Site footer -->
+    <footer class="footer" style="background-color:#333;">
         <p>&copy; Company 2014</p>
-      </footer>
+    </footer>
 
-    </div> <!-- /container -->
+</div> <!-- /container -->
 
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-        
-        
-        
-        
-    </body>
-    
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+
+
+
+</body>
+
 </html>
 
 

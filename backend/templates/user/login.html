@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block page_body %}
+
+
+<style>
+#login-user-pass{
+    max-width:350px;
+    
+    
+    
+}
+</style>
+<center>
+<div id="login-user-pass" >
+    
+    <div class="form-group" >
+        
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}">
+            
+            
+            <div style="margin-bottom:20px;">
+            {% for field in form %}
+            <div class="form-group" style="text-align:left;">
+                <label>{{ field.label_tag }}</label>
+                {{ field }}
+                
+                {% if field.errors %}
+                
+                
+                    <ul>
+                {% for error in field.errors %}
+                <li><strong>{{ error|escape }}</strong></li>
+                {% endfor %}
+                    </ul>
+                
+
+                {% endif %}
+
+            </div>
+            
+            {% endfor %}
+            {% if form.non_field_errors %}
+            <div class="alert alert-warning" role="alert">
+                {{form.non_field_errors}}
+            </div>
+            {% endif %}
+            
+            <input type="submit" class="btn btn-primary" value="Login">
+            </div>
+            <div>
+            
+                <a href="{% url 'password_reset' %}"> Forgot password? </a>
+                <div id="register-here">
+                    Not registered?
+                    <a href="{% url 'register' %}" > Register here </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</center>
+    
+{% endblock %}  
